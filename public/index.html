@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Foro Textual 🌸</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #fff0f5; }
+    form, .mensaje { margin-bottom: 1em; }
+    .mensaje { border: 1px solid #ccc; padding: 10px; background: white; }
+    button.borrar { float: right; background: transparent; border: none; cursor: pointer; color: red; }
+  </style>
+</head>
+<body>
+  <h1>Foro Textual 🌸</h1>
+  <form id="formulario">
+    <input name="nombre" placeholder="Tu nombre" required>
+    <br>
+    <textarea name="texto" placeholder="Escribe algo bonito..." required></textarea>
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="mensajes"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
