@@ -2,16 +2,185 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Foro Textual 🌸</title>
+    <link rel="icon" href="https://cuerpotextual.neocities.org/img/icons/mantis.png" type="image/x-icon">
+  <title>Foro | Cuerpo Textual</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cuerpotextual.neocities.org/css/style.css">
   <style>
-    body { font-family: sans-serif; padding: 20px; background: #fff0f5; }
+    
     form, .mensaje { margin-bottom: 1em; }
     .mensaje { border: 1px solid #ccc; padding: 10px; background: white; }
     button.borrar { float: right; background: transparent; border: none; cursor: pointer; color: red; }
+    body {
+      font-family: 'VT323', monospace;
+      background: repeating-linear-gradient(
+        0deg,
+        #fdf6f9,
+        #fdf6f9 2px,
+        #fefcff 2px,
+        #fefcff 4px
+      );
+      color: #2c2c2c;
+      margin: 0 auto;
+      padding: 2em;
+      max-width: 1000px;
+    }
+
+    h1 {
+  
+      text-align: center;
+    }
+
+    .intro {
+      font-size: 1.4em;
+      max-width: 700px;
+      margin: 0 auto 2em;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+ .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 0em;
+  background-color: #fef6ff;
+}
+
+.window-frame {
+  background: #ffffff;
+  border: 2px solid #d29fdc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 192, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.window-frame:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 192, 255, 0.6);
+}
+
+.window-titlebar {
+  background: linear-gradient(90deg, #ffc2f4, #e5b3ff);
+  color: #333;
+  padding: 0.5em 1em;
+  font-family: 'VT323', monospace;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0a7e0;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.window-buttons span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff6b81;
+}
+
+.window-buttons span:nth-child(2) {
+  background-color: #feca57;
+}
+
+.window-buttons span:nth-child(3) {
+  background-color: #1dd1a1;
+}
+
+.window-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top: 1px solid #fcd5ef;
+  filter: saturate(110%);
+}
+
+.window-frame:hover .window-content img {
+  filter: contrast(115%) brightness(105%)
+}
+
+
+
+
+
+    footer {
+      margin-top: 3em;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  </div>
+</div>
   <h1>Foro Textual 🌸</h1>
+
+  <hr style="all: unset; display: block; height: 1px; background: linear-gradient(to right, transparent, #aa4466, transparent); margin: 2em 0;">
+  <nav id="indice">
+  <ul>
+    <li><a href="../index.html"><img src="../img/icons/home.png" alt="Inicios">Sobre mí</a></li>
+    <li><a href="../textos/index.html"><img src="../img/icons/book.png" alt="Escritos">Textos</a></li>
+    <li><a href="index.html"><img src="../img/icons/camera.png" alt="Fotografía">Fotografía</a></li>
+    <li><a href="../collage/index.html"><img src="../img/icons/carpeta.png" alt="Collage">Collage</a></li>
+  </ul>
+</nav>
+<hr style="all: unset; display: block; height: 1px; background: linear-gradient(to right, transparent, #aa4466, transparent); margin: 2em 0;">
   <form id="formulario">
     <input name="nombre" placeholder="Tu nombre" required>
     <br>
