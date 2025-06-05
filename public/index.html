@@ -7,9 +7,55 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cuerpotextual.neocities.org/css/style.css">
   <style>
-    
-    form, .mensaje { margin-bottom: 1em; }
-    .mensaje { border: 1px solid #ccc; padding: 10px; background: white; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 90vw;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border: 2px dashed #c68ed2;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px #d69eea;
+}
+
+input, textarea {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  background: #fff0ff;
+  font-family: "Courier New", monospace;
+  color: #4b004f;
+}
+
+button {
+  background: #ffccff;
+  border: 1px solid #c68ed2;
+  color: #4b004f;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: monospace;
+  margin-top: 0.5rem;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ffe6ff;
+}
+
+.mensaje {
+  background: rgba(255, 255, 255, 0.8);
+  border-left: 4px solid #c68ed2;
+  margin: 1rem;
+  padding: 1rem;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px #caa0d2;
+  font-family: "Courier New", monospace;
+}
     button.borrar { float: right; background: transparent; border: none; cursor: pointer; color: red; }
     body {
       font-family: 'VT323', monospace;
