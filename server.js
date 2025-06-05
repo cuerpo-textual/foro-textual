@@ -22,6 +22,7 @@ const loadMensajes = () => {
 const saveMensajes = (data) => {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 };
+app.use(express.static("public"));
 
 app.get("/mensajes", (req, res) => {
   res.json(loadMensajes());
