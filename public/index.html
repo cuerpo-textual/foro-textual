@@ -11,40 +11,51 @@
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 400px;
   max-width: 90vw;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 1rem;
-  border: 2px dashed #c68ed2;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 10px #d69eea;
+  background: #fff0fa;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  border: 2px solid #e6b5d0;
+  border-radius: 12px;
+  box-shadow: inset 0 0 5px #ffc2f4, 0 0 10px rgba(248, 177, 250, 0.4);
+  font-family: 'VT323', monospace;
 }
+
 
 input, textarea {
   margin: 0.5rem 0;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  background: #fff0ff;
-  font-family: "Courier New", monospace;
-  color: #4b004f;
+  padding: 0.75rem;
+  border: 1px solid #d09acb;
+  background: #fff6fc;
+  color: #5e005e;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  box-shadow: inset 0 0 4px #f7d1ff;
 }
 
+
 button {
-  background: #ffccff;
-  border: 1px solid #c68ed2;
+  background: #ffccf1;
+  border: 1px solid #d39bd4;
   color: #4b004f;
   font-weight: bold;
-  padding: 0.5rem;
+  padding: 0.7rem 1.2rem;
   cursor: pointer;
-  font-family: monospace;
-  margin-top: 0.5rem;
-  transition: background 0.3s;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #ffe6ff;
+  background: #ffe0f7;
+  box-shadow: 0 0 8px #ffbde9;
 }
+
 
 .mensaje {
   background: rgba(255, 255, 255, 0.8);
