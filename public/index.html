@@ -6,7 +6,68 @@
   <title>¡Comentarios y Aportes! | Cuerpo Textual</title>
   <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cuerpotextual.neocities.org/css/style.css">
-  <style>/* Formulario centrado y minimalista */
+  <style>
+    /* Estilo de la ventana tipo terminal */
+.window-frame {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 105, 180, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 192, 255, 0.5);
+  width: 400px;
+  max-width: 90vw;
+  margin: 2rem auto;
+  display: none; /* Inicialmente oculto */
+  font-family: 'Courier New', monospace;
+}
+
+.window-titlebar {
+  background: linear-gradient(90deg, #ff77c8, #ffbbff);
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 105, 180, 0.5);
+}
+
+.window-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.window-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff6b81;
+}
+
+.window-buttons span:nth-child(2) {
+  background-color: #feca57;
+}
+
+.window-buttons span:nth-child(3) {
+  background-color: #1dd1a1;
+}
+
+.window-content {
+  padding: 1.5rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+  font-size: 1rem;
+}
+
+pre {
+  font-size: 1.1rem;
+  color: #ffbee0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+    /* Formulario centrado y minimalista */
 form {
   display: flex;
   flex-direction: column;
@@ -47,7 +108,42 @@ input:focus, textarea:focus {
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
 }
 
-/* Botón con estilo vaporwave */
+/* Animación elegante para mensajes y elementos */
+.mensaje {
+  background: rgba(255, 255, 255, 0.8);
+  border-left: 5px solid rgba(255, 105, 180, 0.6);
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  font-family: 'VT323', monospace;
+  text-align: center;
+  color: #7d005d;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mensaje:hover {
+  opacity: 1;
+  transform: translateY(0); /* Mantener la posición */
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3); /* Sin cambios bruscos */
+}
+
+/* Animación sutil para los botones */
 button {
   background: rgba(255, 182, 223, 0.7);
   border: none;
@@ -60,6 +156,20 @@ button {
   border-radius: 6px;
   margin-top: 1rem;
   transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 button:hover {
@@ -67,7 +177,8 @@ button:hover {
   box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
 
-/* Estilo de los mensajes */
+
+/* Animación elegante para mensajes y elementos */
 .mensaje {
   background: rgba(255, 255, 255, 0.8);
   border-left: 5px solid rgba(255, 105, 180, 0.6);
@@ -77,15 +188,65 @@ button:hover {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-  font-family: 'Courier New', monospace;
+  font-family: 'VT323', monospace;
   text-align: center;
   color: #7d005d;
-  transition: box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mensaje:hover {
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+  opacity: 1;
+  transform: translateY(0); /* Mantener la posición */
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3); /* Sin cambios bruscos */
 }
+
+/* Animación sutil para los botones */
+button {
+  background: rgba(255, 182, 223, 0.7);
+  border: none;
+  color: #6a004f;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button:hover {
+  background: rgba(255, 182, 223, 0.9);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+}
+
 
     button.borrar { float: right; background: transparent; border: none; cursor: pointer; color: red; }
     body {
@@ -191,5 +352,40 @@ button:hover {
    <footer>
     <a href="https://cuerpotextual.neocities.org">Volver a la web principal n.n</a>
   </footer>
+  <!-- Ventana emergente del terminal -->
+<div id="ventana-terminal" class="window-frame">
+  <div class="window-titlebar">
+    <span>Ayuda del Foro</span>
+    <div class="window-buttons">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="window-content">
+    <pre>
+      Bienvenido al foro textual. Puedes personalizar tus mensajes utilizando etiquetas HTML como:
+
+      <b>&lt;b&gt;</b> - <strong>negrita</strong>
+      <i>&lt;i&gt;</i> - <em>cursiva</em>
+      <p>&lt;p&gt;</p> - <span>párrafo</span>
+      <h1>&lt;h1&gt;</h1> - <span>encabezado principal</span>
+      <code>&lt;code&gt;</code> - <span>código</span>
+
+      ¡Diviértete y comparte tus pensamientos!
+    </pre>
+  </div>
+</div>
+<!-- Botón para abrir la ventana -->
+<button id="mostrarAyuda">Ver Ayuda</button>
+  <script>
+  const mostrarAyudaBtn = document.getElementById("mostrarAyuda");
+  const ventanaTerminal = document.getElementById("ventana-terminal");
+
+  mostrarAyudaBtn.addEventListener("click", () => {
+    ventanaTerminal.style.display = ventanaTerminal.style.display === "block" ? "none" : "block";
+  });
+</script>
+
 </body>
 </html>
