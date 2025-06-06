@@ -7,65 +7,92 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cuerpotextual.neocities.org/css/style.css">
   <style>
-    /* Estilo de la ventana tipo terminal */
+  /* Estilo de la ventana tipo terminal */
 .window-frame {
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid rgba(255, 105, 180, 0.7);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(255, 192, 255, 0.5);
+  background: rgba(0, 0, 0, 0.8);
+  border: none; /* Eliminamos el borde para darle un estilo más limpio */
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  position: fixed; /* Fijamos la ventana en la pantalla */
+  left: 20px;
+  bottom: 20px;
   width: 400px;
   max-width: 90vw;
-  margin: 2rem auto;
-  display: none; /* Inicialmente oculto */
   font-family: 'Courier New', monospace;
-}
-
-.window-titlebar {
-  background: linear-gradient(90deg, #ff77c8, #ffbbff);
-  color: #fff;
-  padding: 1rem;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid rgba(255, 105, 180, 0.5);
-}
-
-.window-buttons {
-  display: flex;
-  gap: 6px;
-}
-
-.window-buttons span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ff6b81;
-}
-
-.window-buttons span:nth-child(2) {
-  background-color: #feca57;
-}
-
-.window-buttons span:nth-child(3) {
-  background-color: #1dd1a1;
-}
-
-.window-content {
   padding: 1.5rem;
+  border-radius: 8px;
+  display: none; /* Inicialmente oculta */
+}
+
+/* Estilo del contenido dentro de la ventana */
+.window-content {
   color: #fff;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
   overflow-y: auto;
   font-size: 1rem;
+  height: 250px; /* Fijamos una altura */
+  white-space: pre-wrap; /* Aseguramos que el contenido no se corte */
 }
 
+/* Modificaciones para el texto dentro de la ventana */
 pre {
   font-size: 1.1rem;
-  color: #ffbee0;
+  color: #ffbee0; /* Un color suave para el texto */
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+/* Modificación para etiquetas dentro del terminal */
+pre b, pre i, pre h1, pre p, pre code {
+  color: #ffbee0; /* Aseguramos que todo el contenido se vea igual */
+}
+
+pre b {
+  font-weight: bold;
+}
+
+pre i {
+  font-style: italic;
+}
+
+pre h1 {
+  font-size: 1.5rem;
+  color: #ff77c8; /* Un color para los encabezados */
+}
+
+pre p {
+  margin: 1rem 0;
+}
+
+pre code {
+  font-size: 1rem;
+  background-color: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+/* Estilo del botón para abrir la ventana */
+#mostrarAyuda {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 182, 223, 0.7);
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #6a004f;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.5);
+  transition: all 0.3s ease;
+}
+
+#mostrarAyuda:hover {
+  background: rgba(255, 182, 223, 0.9);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+}
+
 
     /* Formulario centrado y minimalista */
 form {
