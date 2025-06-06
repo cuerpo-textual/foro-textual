@@ -7,6 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cuerpotextual.neocities.org/css/style.css">
   <style>
+    .symbols {
+  animation: float 6s ease-in-out infinite alternate;
+    position: fixed;
+  left: 10px;
+  bottom: 10px;
+  font-size: 1.2em;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
   .volver-btn {
   position: fixed;
   top: 12px;
@@ -37,7 +54,7 @@
   box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
   position: fixed;
   left: 20px;
-  bottom: 50px;
+  bottom: 60px;
   width: 400px;
   max-width: 90vw;
   font-family: 'VT323', monospace;
@@ -468,7 +485,7 @@ footer {
 
   <script src="main.js"></script>
    <footer>
-    <a href="https://cuerpotextual.neocities.org">Volver a la web principal n.n</a>
+  <div class="symbols">⚧ ❀ ♡ ⊹</div>
   </footer>
 <!-- Ventana emergente del terminal -->
 <div id="ventana-terminal" class="window-frame">
