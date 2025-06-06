@@ -1,60 +1,37 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const fs = require("fs");
+require("dotenv").config();
+const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const DATA_FILE = "mensajes.json";
-const ADMIN_KEY = process.env.ADMIN_KEY || "secreto";
-
 app.use(cors());
 app.use(bodyParser.json());
-
-const loadMensajes = () => {
-  try {
-    return JSON.parse(fs.readFileSync(DATA_FILE));
-  } catch {
-    return [];
-  }
-};
-
-const saveMensajes = (data) => {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-};
 app.use(express.static("public"));
 
-app.get("/mensajes", (req, res) => {
-  res.json(loadMensajes());
+// Conexión a Supabase
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+
+// Obtener mensajes
+app.get("/mensajes", async (req, res) => {
+  const { data, error } = await supabase
+    .from("mensajes")
+    .select("*")
+    .order("timestamp", { ascending: true });
+  if (error) return res.status(500).json({ error });
+  res.json(data);
 });
 
-app.post("/post", (req, res) => {
-  const { nombre, texto, respuestaA } = req.body;
-  if (!nombre || !texto) return res.status(400).send("Falta nombre o texto.");
-
-  const mensajes = loadMensajes();
-  const nuevo = {
-    id: Date.now().toString(),
-    nombre,
-    texto,
-    respuestaA: respuestaA || null,
-    fecha: new Date().toISOString()
-  };
-  mensajes.push(nuevo);
-  saveMensajes(mensajes);
-  res.json({ ok: true, mensaje: nuevo });
+// Guardar mensaje
+app.post("/mensajes", async (req, res) => {
+  const { nombre, texto } = req.body;
+  const { data, error } = await supabase
+    .from("mensajes")
+    .insert([{ nombre, texto, timestamp: new Date() }]);
+  if (error) return res.status(500).json({ error });
+  res.status(201).json(data);
 });
 
-app.post("/borrar", (req, res) => {
-  const { id, clave } = req.body;
-  if (clave !== ADMIN_KEY) return res.status(403).send("Clave incorrecta.");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
 
-  let mensajes = loadMensajes();
-  mensajes = mensajes.filter((m) => m.id !== id);
-  saveMensajes(mensajes);
-  res.json({ ok: true });
-});
-
-app.listen(PORT, () => {
-  console.log("Foro backend en http://localhost:" + PORT);
-});
