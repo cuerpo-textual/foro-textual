@@ -7,19 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cuerpotextual.neocities.org/css/style.css">
   <style>
-  /* Estilo de la ventana tipo terminal */
+/* Estilo de la ventana tipo terminal */
 .window-frame {
-  background: rgba(0, 0, 0, 0.8);
-  border: none; /* Eliminamos el borde para darle un estilo más limpio */
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+  background: rgba(0, 0, 0, 0.85);
+  border: none; /* Eliminamos el borde grueso */
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.6); /* Un sombra más ligera */
   position: fixed; /* Fijamos la ventana en la pantalla */
   left: 20px;
   bottom: 20px;
   width: 400px;
   max-width: 90vw;
   font-family: 'Courier New', monospace;
-  padding: 1.5rem;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 6px; /* Borde más sutil */
   display: none; /* Inicialmente oculta */
 }
 
@@ -32,9 +32,10 @@
   font-size: 1rem;
   height: 250px; /* Fijamos una altura */
   white-space: pre-wrap; /* Aseguramos que el contenido no se corte */
+  text-align: left; /* Alineamos el texto a la izquierda */
 }
 
-/* Modificaciones para el texto dentro de la ventana */
+/* Modificaciones para el texto dentro del terminal */
 pre {
   font-size: 1.1rem;
   color: #ffbee0; /* Un color suave para el texto */
@@ -92,6 +93,7 @@ pre code {
   background: rgba(255, 182, 223, 0.9);
   box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
+
 
 
     /* Formulario centrado y minimalista */
@@ -383,15 +385,20 @@ button:hover {
 <div id="ventana-terminal" class="window-frame">
   <div class="window-content">
     <pre>
-      Bienvenido al foro textual. Puedes personalizar tus mensajes utilizando etiquetas HTML como:
+[ navi ~ ]# Connected to the Wired...
 
-      <b>&lt;b&gt;</b> - <strong>negrita</strong>
-      <i>&lt;i&gt;</i> - <em>cursiva</em>
-      <p>&lt;p&gt;</p> - <span>párrafo</span>
-      <h1>&lt;h1&gt;</h1> - <span>encabezado principal</span>
-      <code>&lt;code&gt;</code> - <span>código</span>
+cuerpo@textual:~$ Esta es la sección de foro uwu
 
-      ¡Diviértete y comparte tus pensamientos!
+cuerpo@textual:~$ escribe lo que quieras pero
+
+cuerpo@textual:~$ se respetuosx o serás censurado.
+
+Shell: /bin/bash|
+
+###TIPS###
+Encierra tú texto en estas etiquetas para características especiales
+<p>esto es un texto normal</p>
+<b>esto se imprimirá en negrita</b>
     </pre>
   </div>
 </div>
