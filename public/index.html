@@ -3,64 +3,31 @@
 <head>
   <meta charset="UTF-8">
     <link rel="icon" href="https://cuerpotextual.neocities.org/img/icons/mantis.png" type="image/x-icon">
-  <title>¡Comentarios y Aportes! | Cuerpo Textual</title>
+  <title>Foro Textual</title>
   <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cuerpotextual.neocities.org/css/style.css">
   <style>
-    .glitch-btn {
+  .volver-btn {
   position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #ffd7f1;
-  color: #4b0049;
-  font-family: "Courier New", monospace;
-  border: 2px solid #4b0049;
-  padding: 6px 12px;
-  border-radius: 4px;
+  top: 12px;
+  right: 12px;
+  background-color: #fdf6f9;
+  color: #5a3e57;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid #d8b4c4;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: bold;
-  box-shadow: 2px 2px 0 #4b0049;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, transform 0.1s;
   z-index: 1000;
-  overflow: hidden;
-  display: inline-block;
 }
 
-.glitch-btn::before,
-.glitch-btn::after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  background: #ffd7f1;
-  color: #ff80c0;
-  clip: rect(0, 0, 0, 0);
-}
-
-.glitch-btn::before {
-  animation: glitchTop 2s infinite linear;
-  top: -2px;
-}
-
-.glitch-btn::after {
-  animation: glitchBottom 3s infinite linear;
-  bottom: -2px;
-}
-
-@keyframes glitchTop {
-  0% { clip: rect(0, 9999px, 0, 0); }
-  5% { clip: rect(0, 9999px, 4px, 0); left: 2px; }
-  10% { clip: rect(2px, 9999px, 6px, 0); left: -2px; }
-  15% { clip: rect(0, 9999px, 0, 0); left: 0; }
-  100% { clip: rect(0, 9999px, 0, 0); }
-}
-
-@keyframes glitchBottom {
-  0% { clip: rect(0, 9999px, 0, 0); }
-  5% { clip: rect(4px, 9999px, 8px, 0); left: -2px; }
-  10% { clip: rect(2px, 9999px, 10px, 0); left: 2px; }
-  15% { clip: rect(0, 9999px, 0, 0); left: 0; }
-  100% { clip: rect(0, 9999px, 0, 0); }
+.volver-btn:hover {
+  background-color: #ffe8f3;
+  transform: scale(1.02);
+  cursor: pointer;
 }
 
 /* Estilo de la ventana tipo terminal */
@@ -513,9 +480,9 @@ footer {
 
 <span class="terminal-text">cuerpo@textual<span class="censura">:</span>~<span class="censura">$</span></span> Escribe lo que quieras pero se respetuosx o serás <span class="censura">censuradx</span>
 
-<span class="terminal-text"><span class="censura">Shell:</span> /bin/bash</span>
+<span class="terminal-text"><span class="censura">Shell: /bin/bash</span></span>
 
-<span class="censura">### TIPS ###</span>
+<span class="terminal-text">### TIPS ###</span>
 Encierra tú texto en estas etiquetas para características especiales
 
 <span class="terminal-text">&lt;p&gt;</span>esto es un texto normal<span class="terminal-text">&lt;/p&gt;</span>      <p>--Para párrafos de texto.</p>
@@ -536,7 +503,7 @@ Encierra tú texto en estas etiquetas para características especiales
 <!-- Botón para abrir la ventana -->
 <button id="mostrarAyuda">Ayuda</button>
 
-<a href="https://cuerpotextual.neocities.org" class="volver-inicio glitch-btn" title="Volver a inicio">🏠 Cuerpo-Textual</a>
+<a href="https://cuerpotextual.neocities.org" class="volver-btn">← volver a cuerpo-textual</a>
 
 
   <script>
