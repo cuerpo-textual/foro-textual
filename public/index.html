@@ -46,7 +46,6 @@
   transform: scale(1.02);
   cursor: pointer;
 }
-
 /* Estilo de la ventana tipo terminal */
 .window-frame {
   background: rgba(0, 0, 0, 0.75);
@@ -58,24 +57,23 @@
   width: 400px;
   max-width: 90vw;
   font-family: 'VT323', monospace;
-  padding: 0.8rem;
+  padding: 0.6rem;
   border-radius: 5px;
-  display: none;
+  display: block;
 }
 
 /* Estilo del contenido dentro de la ventana */
 .window-content {
   color: #fff;
   background: rgba(0, 0, 0, 0.8);
- padding: 0.4rem 1rem 1rem 1rem; /* top right bottom left */
+    padding: 0rem 1rem 1rem 1rem; /* top right bottom left */
   overflow-y: auto;
-  font-size: 0.9rem;  /* Reduce el tamaño de la fuente */
+  font-size: 0.6rem;  /* Reduce el tamaño de la fuente */
   height: 250px;
   white-space: pre-wrap;
   text-align: left;
   vertical-align: top;
 }
-
 /* Modificaciones para el texto dentro del terminal */
 pre {
   font-size: 1rem;
