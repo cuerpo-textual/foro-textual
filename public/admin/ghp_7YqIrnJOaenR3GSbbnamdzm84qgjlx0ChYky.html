@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Borrar Mensaje</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #b3f0ff;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 5rem;
+    }
+
+    input, button {
+      font-family: inherit;
+      padding: 0.6rem;
+      margin: 0.5rem;
+      background: #1a1a1a;
+      border: 1px solid #555;
+      color: #fff;
+      width: 300px;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #c92090;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #e34bb5;
+    }
+
+    .ok {
+      margin-top: 2rem;
+      color: #80ffbf;
+    }
+
+    .error {
+      margin-top: 2rem;
+      color: #ff8080;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Borrar mensaje</h1>
+  <p>Ingresa el ID exacto del mensaje para eliminarlo del foro.</p>
+
+  <input id="idABorrar" placeholder="ID del mensaje">
+  <br>
+  <button onclick="borrarMensaje()">Borrar</button>
+
+  <div id="respuesta"></div>
+
+  <script>
+    async function borrarMensaje() {
+      const id = document.getElementById("idABorrar").value.trim();
+      const respuestaDiv = document.getElementById("respuesta");
+      respuestaDiv.innerHTML = "";
+
+      if (!id) {
+        respuestaDiv.innerHTML = "<p class='error'>Falta el ID.</p>";
+        return;
+      }
+
+      try {
+        const res = await fetch("https://foro-textual.onrender.com/borrar", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id,
+            clave: "n1c0lovezlynx"
+          })
+        });
+
+        if (res.ok) {
+          respuestaDiv.innerHTML = "<p class='ok'>Mensaje eliminado con éxito.</p>";
+        } else {
+          const error = await res.text();
+          respuestaDiv.innerHTML = `<p class='error'>Error: ${error}</p>`;
+        }
+      } catch (err) {
+        respuestaDiv.innerHTML = "<p class='error'>Error al conectar con el servidor.</p>";
+      }
+    }
+  </script>
+
+</body>
+</html>
