@@ -10,17 +10,17 @@
 /* Estilo de la ventana tipo terminal */
 .window-frame {
   background: rgba(0, 0, 0, 0.85);
-  border: none; /* Eliminamos el borde grueso */
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.6); /* Un sombra más ligera */
-  position: fixed; /* Fijamos la ventana en la pantalla */
+  border: none;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+  position: fixed;
   left: 20px;
   bottom: 20px;
   width: 400px;
   max-width: 90vw;
   font-family: 'Courier New', monospace;
   padding: 1rem;
-  border-radius: 6px; /* Borde más sutil */
-  display: none; /* Inicialmente oculta */
+  border-radius: 6px;
+  display: none;
 }
 
 /* Estilo del contenido dentro de la ventana */
@@ -30,22 +30,22 @@
   padding: 1rem;
   overflow-y: auto;
   font-size: 1rem;
-  height: 250px; /* Fijamos una altura */
-  white-space: pre-wrap; /* Aseguramos que el contenido no se corte */
-  text-align: left; /* Alineamos el texto a la izquierda */
+  height: 250px;
+  white-space: pre-wrap;
+  text-align: left;
 }
 
 /* Modificaciones para el texto dentro del terminal */
 pre {
   font-size: 1.1rem;
-  color: #ffbee0; /* Un color suave para el texto */
+  color: #ffbee0;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* Modificación para etiquetas dentro del terminal */
-pre b, pre i, pre h1, pre p, pre code {
-  color: #ffbee0; /* Aseguramos que todo el contenido se vea igual */
+/* Estilo para las etiquetas sin ningún estilo aplicado */
+pre b, pre i, pre h1, pre p, pre code, pre ul, pre ol, pre li, pre hr {
+  color: #ffbee0; /* Texto con color claro */
 }
 
 pre b {
@@ -58,7 +58,6 @@ pre i {
 
 pre h1 {
   font-size: 1.5rem;
-  color: #ff77c8; /* Un color para los encabezados */
 }
 
 pre p {
@@ -70,6 +69,22 @@ pre code {
   background-color: #333;
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
+}
+
+pre ul, pre ol {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+}
+
+pre li {
+  margin-bottom: 0.3rem;
+}
+
+/* Estilo para la línea horizontal */
+pre hr {
+  border: none;
+  border-top: 1px solid #ffbee0;
+  margin: 1rem 0;
 }
 
 /* Estilo del botón para abrir la ventana */
@@ -93,8 +108,6 @@ pre code {
   background: rgba(255, 182, 223, 0.9);
   box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
-
-
 
     /* Formulario centrado y minimalista */
 form {
@@ -389,22 +402,30 @@ button:hover {
 
 cuerpo@textual:~$ Esta es la sección de foro uwu
 
-cuerpo@textual:~$ escribe lo que quieras pero
+cuerpo@textual:~$ escribe lo que quieras pero se respetuosx o serás censurado.
 
-cuerpo@textual:~$ se respetuosx o serás censurado.
+Shell: /bin/bashcuerpo@textual:~$
 
-Shell: /bin/bash|
-
-###TIPS###
+### TIPS ###
 Encierra tú texto en estas etiquetas para características especiales
-<p>esto es un texto normal</p>
-<b>esto se imprimirá en negrita</b>
+
+&lt;p&gt;esto es un texto normal&lt;/p&gt;      - Para párrafos de texto.
+&lt;b&gt;esto se imprimirá en negrita&lt;/b&gt;  - Para resaltar texto en negrita.
+&lt;i&gt;esto es cursiva&lt;/i&gt;              - Para aplicar cursiva a tu texto.
+&lt;h1&gt;Encabezado principal&lt;/h1&gt;      - Para el encabezado más grande, el título principal.
+&lt;h2&gt;Encabezado secundario&lt;/h2&gt;     - Para subtítulos o encabezados de segundo nivel.
+&lt;h3&gt;Encabezado terciario&lt;/h3&gt;     - Para encabezados de tercer nivel.
+&lt;ul&gt;&lt;li&gt;Elemento de lista&lt;/li&gt;&lt;/ul&gt;  - Para crear listas con viñetas.
+&lt;ol&gt;&lt;li&gt;Elemento numerado&lt;/li&gt;&lt;/ol&gt; - Para listas ordenadas.
+&lt;code&gt;Código&lt;/code&gt;              - Para mostrar fragmentos de código.
+&lt;hr&gt;                                - Para crear una línea horizontal separadora.
     </pre>
   </div>
 </div>
 
 <!-- Botón para abrir la ventana -->
 <button id="mostrarAyuda">Ver Ayuda</button>
+
 
   <script>
   const mostrarAyudaBtn = document.getElementById("mostrarAyuda");
