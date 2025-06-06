@@ -17,7 +17,7 @@
   bottom: 20px;
   width: 400px;
   max-width: 90vw;
-  font-family: 'Courier New', monospace;
+  font-family: 'VT323', monospace;
   padding: 1rem;
   border-radius: 6px;
   display: none;
@@ -29,7 +29,7 @@
   background: rgba(0, 0, 0, 0.9);
   padding: 1rem;
   overflow-y: auto;
-  font-size: 1rem;
+  font-size: 0.9rem;  /* Reduce el tamaño de la fuente */
   height: 250px;
   white-space: pre-wrap;
   text-align: left;
@@ -37,13 +37,13 @@
 
 /* Modificaciones para el texto dentro del terminal */
 pre {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #ffbee0;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* Estilo para las etiquetas sin ningún estilo aplicado */
+/* Textos de terminal en verde neón y negrita */
 pre b, pre i, pre h1, pre p, pre code, pre ul, pre ol, pre li, pre hr {
   color: #ffbee0; /* Texto con color claro */
 }
@@ -80,10 +80,21 @@ pre li {
   margin-bottom: 0.3rem;
 }
 
+/* Texto principal del terminal en verde neón */
+pre .terminal-text {
+  color: #39ff14; /* Verde neón */
+  font-weight: bold;
+}
+
+/* Añadir espacio entre las líneas de código */
+pre .codigo-ejemplo {
+  margin-bottom: 0.8rem; /* Espacio entre líneas */
+}
+
 /* Estilo para la línea horizontal */
 pre hr {
   border: none;
-  border-top: 1px solid #ffbee0;
+  border-top: 1px solid #39ff14; /* Verde neón */
   margin: 1rem 0;
 }
 
@@ -398,33 +409,44 @@ button:hover {
 <div id="ventana-terminal" class="window-frame">
   <div class="window-content">
     <pre>
-[ navi ~ ]# Connected to the Wired...
+[ <span class="terminal-text">navi ~</span> ]# <span class="terminal-text">Connected to the Wired...</span>
 
-cuerpo@textual:~$ Esta es la sección de foro uwu
+cuerpo@textual:~$ <span class="terminal-text">Esta es la sección de foro uwu</span>
 
-cuerpo@textual:~$ escribe lo que quieras pero se respetuosx o serás censurado.
+cuerpo@textual:~$ <span class="terminal-text">escribe lo que quieras pero se respetuosx o serás censurado</span>
 
-Shell: /bin/bashcuerpo@textual:~$
+Shell: /bin/bash
 
 ### TIPS ###
 Encierra tú texto en estas etiquetas para características especiales
 
-&lt;p&gt;esto es un texto normal&lt;/p&gt;      - Para párrafos de texto.
-&lt;b&gt;esto se imprimirá en negrita&lt;/b&gt;  - Para resaltar texto en negrita.
-&lt;i&gt;esto es cursiva&lt;/i&gt;              - Para aplicar cursiva a tu texto.
-&lt;h1&gt;Encabezado principal&lt;/h1&gt;      - Para el encabezado más grande, el título principal.
-&lt;h2&gt;Encabezado secundario&lt;/h2&gt;     - Para subtítulos o encabezados de segundo nivel.
-&lt;h3&gt;Encabezado terciario&lt;/h3&gt;     - Para encabezados de tercer nivel.
-&lt;ul&gt;&lt;li&gt;Elemento de lista&lt;/li&gt;&lt;/ul&gt;  - Para crear listas con viñetas.
-&lt;ol&gt;&lt;li&gt;Elemento numerado&lt;/li&gt;&lt;/ol&gt; - Para listas ordenadas.
-&lt;code&gt;Código&lt;/code&gt;              - Para mostrar fragmentos de código.
-&lt;hr&gt;                                - Para crear una línea horizontal separadora.
+<pre class="codigo-ejemplo">&lt;p&gt;esto es un texto normal&lt;/p&gt;</pre>      - Para párrafos de texto.
+
+<pre class="codigo-ejemplo">&lt;b&gt;esto se imprimirá en negrita&lt;/b&gt;</pre>  - Para resaltar texto en negrita.
+
+<pre class="codigo-ejemplo">&lt;i&gt;esto es cursiva&lt;/i&gt;</pre>              - Para aplicar cursiva a tu texto.
+
+<pre class="codigo-ejemplo">&lt;h1&gt;Encabezado principal&lt;/h1&gt;</pre>      - Para el encabezado más grande, el título principal.
+
+<pre class="codigo-ejemplo">&lt;h2&gt;Encabezado secundario&lt;/h2&gt;</pre>     - Para subtítulos o encabezados de segundo nivel.
+
+<pre class="codigo-ejemplo">&lt;h3&gt;Encabezado terciario&lt;/h3&gt;</pre>     - Para encabezados de tercer nivel.
+
+<pre class="codigo-ejemplo">&lt;ul&gt;&lt;li&gt;Elemento de lista&lt;/li&gt;&lt;/ul&gt;</pre>  - Para crear listas con viñetas.
+
+<pre class="codigo-ejemplo">&lt;ol&gt;&lt;li&gt;Elemento numerado&lt;/li&gt;&lt;/ol&gt;</pre> - Para listas ordenadas.
+
+<pre class="codigo-ejemplo">&lt;code&gt;Código&lt;/code&gt;</pre>              - Para mostrar fragmentos de código.
+
+<pre class="codigo-ejemplo">&lt;hr&gt;</pre>                                - Para crear una línea horizontal separadora.
+
     </pre>
   </div>
 </div>
 
 <!-- Botón para abrir la ventana -->
 <button id="mostrarAyuda">Ver Ayuda</button>
+
 
 
   <script>
