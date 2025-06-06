@@ -306,20 +306,41 @@ button:hover {
 
 
     button.borrar { float: right; background: transparent; border: none; cursor: pointer; color: red; }
-    body {
-      font-family: 'VT323', monospace;
-      background: repeating-linear-gradient(
-        0deg,
-        #fdf6f9,
-        #fdf6f9 2px,
-        #fefcff 2px,
-        #fefcff 4px
-      );
-      color: #2c2c2c;
-      margin: 0 auto;
-      padding: 2em;
-      max-width: 1000px;
-    }
+  /* Fondo estilo vaporwave */
+body {
+  font-family: 'VT323', monospace;
+  background: repeating-linear-gradient( 0deg, rgba(255, 235, 255, 0.4), rgba(255, 235, 255, 0.4) 10px, rgba(255, 228, 255, 0.4) 10px, rgba(255, 228, 255, 0.4) 20px );
+  color: #333;
+  margin: 0;
+  padding: 2em;
+  max-width: 1000px;
+}
+
+.snowflake img {
+  filter: sepia(50%) hue-rotate(-40deg);
+  animation: snow 10s linear infinite;
+}
+
+/* Efecto de nieve */
+@keyframes snow {
+  0% { opacity: 1; transform: translateY(-20px) scale(1); }
+  100% { opacity: 0; transform: translateY(100vh) scale(0.7); }
+}
+
+footer {
+  margin-top: 3em;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+a {
+  color: #4b004f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
     h1 {
   
@@ -334,20 +355,6 @@ button:hover {
       line-height: 1.5;
     }
 
-    footer {
-      margin-top: 3em;
-      font-size: 1.2em;
-      text-align: center;
-    }
-
-    a {
-      color: #000000;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body oncontextmenu="return false;">
@@ -415,7 +422,7 @@ button:hover {
     <pre>
 <span class="terminal-text">[ navi ~ ]# Connected to the Wired...</span>
 
-<span class="terminal-text">cuerpo@textual:~$</span> Esta es la sección de foro <span class="censura">♡</span> <span class="terminal-text">～('▽^人)</span>
+<span class="terminal-text">cuerpo@textual:~$</span> ¡En esta sección puedes aportar tus propios textos! <span class="censura">♡</span> <span class="terminal-text">～('▽^人)</span>
 
 <span class="terminal-text">cuerpo@textual:~$</span> Escribe lo que quieras pero se respetuosx o serás <span class="censura">censuradx</span>
 
