@@ -306,47 +306,80 @@ button:hover {
 
 
     button.borrar { float: right; background: transparent; border: none; cursor: pointer; color: red; }
-  /* Fondo estilo vaporwave */
+
 body {
+  cursor: url('/img/icons/mouse.png'), auto !important;
   font-family: 'VT323', monospace;
-  background: repeating-linear-gradient( 0deg, rgba(255, 235, 255, 0.4), rgba(255, 235, 255, 0.4) 10px, rgba(255, 228, 255, 0.4) 10px, rgba(255, 228, 255, 0.4) 20px );
-  color: #333;
-  margin: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    #fdf6f9,
+    #fdf6f9 1px,
+    #fefcff 1px,
+    #fefcff 2px
+  );
+  color: #2c2c2c;
+  margin: 2em auto;
+  max-width: 800px;
   padding: 2em;
-  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+body::before,
+body::after {
+  content: "│░▒▓█ Cuerpo Textual █▓▒░│";
+  position: fixed;
+  writing-mode: vertical-rl;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8em;
+  color: #d17cb0;
+  opacity: 0.3;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+  pointer-events: none;
 }
 
-.snowflake img {
-  filter: sepia(50%) hue-rotate(-40deg);
-  animation: snow 10s linear infinite;
+body::before {
+  left: 0;
+}
+body::after {
+  right: 0;
+  transform: rotate(180deg);
 }
 
-/* Efecto de nieve */
-@keyframes snow {
-  0% { opacity: 1; transform: translateY(-20px) scale(1); }
-  100% { opacity: 0; transform: translateY(100vh) scale(0.7); }
+h1 {
+  font-family: 'Major Mono Display', monospace;
+  font-weight: normal;
+  text-transform: lowercase;
+  color: #d17cb0;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 0 #ffb6c1, -1px 0 #a0ecff;
 }
-
-footer {
-  margin-top: 3em;
-  font-size: 1.2em;
-  text-align: center;
+h2 {
+  font-family: 'Major Mono Display', monospace;
+  font-weight: normal;
+  color: #d17cb0;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 0 #ffb6c1, -1px 0 #a0ecff;
 }
 
 a {
-  color: #4b004f;
-  text-decoration: none;
+   cursor: url('/img/icons/mouse.png'), auto !important;
+    color: #3366cc;
+    text-decoration: none;
 }
-
 a:hover {
+   cursor: url('/img/icons/mouse.png'), auto !important;
   text-decoration: underline;
 }
-
-    h1 {
-  
-      text-align: center;
-    }
-
+footer {
+  font-size: 1.2em;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 4em;
+  color: #888;
+}
     .intro {
       font-size: 1.4em;
       max-width: 700px;
