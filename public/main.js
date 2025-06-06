@@ -13,7 +13,7 @@ async function cargarMensajes() {
     div.className = "mensaje";
     div.innerHTML = `
       <strong>${nombre}</strong> <em>${new Date(fecha).toLocaleString()}</em>
-      ${ADMIN_KEY ? `<button class="borrar" data-id="${id}">❌</button>` : ""}
+     
       <p>${texto}</p>
     `;
     contenedor.appendChild(div);
