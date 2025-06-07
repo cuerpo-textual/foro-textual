@@ -27,11 +27,11 @@ document.querySelector("#formulario").addEventListener("submit", async (e) => {
   const nombre = form.nombre.value;
   const texto = form.texto.value;
 
-  await fetch(`${BACKEND_URL}/post`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ nombre, texto })
-  });
+  await fetch(`${BACKEND_URL}/mensajes`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ nombre, texto })
+});
 
   form.reset();
   cargarMensajes();
