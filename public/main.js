@@ -8,7 +8,7 @@ async function cargarMensajes() {
   const contenedor = document.querySelector("#mensajes");
   contenedor.innerHTML = "";
 
-  mensajes.slice().reverse().forEach(({ id, nombre, texto, fecha }) => {
+  mensajes.slice().reverse().forEach(({ id, nombre, texto, timestamp }) => {
     const div = document.createElement("div");
     div.className = "mensaje";
     div.innerHTML = `
