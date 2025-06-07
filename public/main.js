@@ -13,7 +13,7 @@ async function cargarMensajes() {
     div.className = "mensaje";
     div.innerHTML = `
       <strong>${nombre}</strong> 
-      <p><em>${new Date(timestamp).toLocaleString()}</em></p>
+      <p><em>${new Date(timestamp).toLocaleString("es-CL", { timeZone: "America/Santiago" })}</em></p>
       <p>${texto}</p>
     `;
     contenedor.appendChild(div);
