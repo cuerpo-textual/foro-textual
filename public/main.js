@@ -14,7 +14,6 @@ async function cargarMensajes() {
     div.innerHTML = `
       <strong>${nombre}</strong> 
       <p><em>${new Date(timestamp).toLocaleString()}</em></p>
-     <p class="id-mensaje">ID: ${id}</p>
       <p>${texto}</p>
     `;
     contenedor.appendChild(div);
