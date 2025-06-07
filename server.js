@@ -38,6 +38,23 @@ app.post("/mensajes", async (req, res) => {
   res.status(201).json(data);
 });
 
+// Borrar mensaje por ID (solo admin)
+app.post("/borrar", async (req, res) => {
+  const { id, clave } = req.body;
+  if (clave !== process.env.ADMIN_KEY) {
+    return res.status(403).json({ error: "Clave incorrecta" });
+  }
+  const { error } = await supabase
+    .from("mensajes")
+    .delete()
+    .eq("id", id);
+  if (error) {
+    console.log(error);
+    return res.status(500).json({ error });
+  }
+  res.json({ success: true });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
 
