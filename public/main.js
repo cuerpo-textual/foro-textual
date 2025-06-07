@@ -13,7 +13,7 @@ async function cargarMensajes() {
     div.className = "mensaje";
     div.innerHTML = `
       <strong>${nombre}</strong> 
-      <p><em>${new Date(fecha).toLocaleString()}</em></p>
+      <p><em>${new Date(timestamp).toLocaleString()}</em></p>
      <p class="id-mensaje">ID: ${id}</p>
       <p>${texto}</p>
     `;

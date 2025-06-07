@@ -18,7 +18,10 @@ app.get("/mensajes", async (req, res) => {
     .from("mensajes")
     .select("*")
     .order("timestamp", { ascending: true });
-  if (error) return res.status(500).json({ error });
+  if (error) {
+    console.log(error);
+    return res.status(500).json({ error });
+  }
   res.json(data);
 });
 
@@ -28,7 +31,10 @@ app.post("/mensajes", async (req, res) => {
   const { data, error } = await supabase
     .from("mensajes")
     .insert([{ nombre, texto, timestamp: new Date() }]);
-  if (error) return res.status(500).json({ error });
+  if (error) {
+    console.log(error);
+    return res.status(500).json({ error });
+  }
   res.status(201).json(data);
 });
 
