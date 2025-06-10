@@ -480,6 +480,20 @@ footer {
     <br>
     <button type="submit">Enviar</button>
   </form>
+  <!-- Controles de filtro y búsqueda -->
+<div id="filtros" style="display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: 0 auto 1em;">
+  <div>
+    <label style="font-family: 'VT323', monospace; color: #d17cb0;">Orden:</label>
+    <select id="orden" style="font-family: 'VT323', monospace; border-radius: 6px; border: 1px solid #ffbee0; background: #fff0ff; color: #8f0067; padding: 0.3em;">
+      <option value="recientes">Más recientes primero</option>
+      <option value="antiguas">Más antiguas primero</option>
+    </select>
+  </div>
+  <div>
+    <input id="busqueda" type="text" placeholder="Buscar por nombre o texto..." style="font-family: 'VT323', monospace; border-radius: 6px; border: 1px solid #ffbee0; background: #fff0ff; color: #8f0067; padding: 0.3em; width: 220px;">
+  </div>
+</div>
+ <!-- Entradas de texto -->
   <div id="mensajes"></div>
 
   <script src="main.js"></script>
