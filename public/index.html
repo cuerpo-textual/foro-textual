@@ -427,15 +427,20 @@ footer {
   display: flex;
   gap: 3em;
   align-items: flex-start;
-  max-width: 1200px; /* Aumenta el ancho máximo */
+  max-width: 1200px;
   margin: 0 auto;
+  justify-content: center; /* Centra el contenido principal */
 }
 
 #mensajes {
   flex: 1 1 0%;
   min-width: 0;
+  max-width: 600px;      /* Limita el ancho de los mensajes */
+  margin: 0 auto;        /* Centra los mensajes en su columna */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* Centra cada mensaje */
 }
-
 #sidebar-filtros {
   width: 280px;
   background: rgba(255, 240, 255, 0.85);
@@ -478,6 +483,12 @@ footer {
   margin-bottom: 1em;
   transition: box-shadow 0.3s;
   box-sizing: border-box;
+}
+
+#sidebar-filtros input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 #sidebar-filtros select:focus,
@@ -530,6 +541,13 @@ footer {
   </div>
   <div class="snowflake">
     <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
+  <div class="snowflake">
+    <img src="https://i.imgur.com/Anpva1L.png">
+  </div>
   <div class="snowflake">
     <img src="https://i.imgur.com/Anpva1L.png">
   </div>
