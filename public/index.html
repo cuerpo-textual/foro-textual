@@ -357,8 +357,8 @@ body {
     #fefcff 2px
   );
   color: #2c2c2c;
+  max-width: 1200px;
   margin: 2em auto;
-  max-width: 800px;
   padding: 2em;
   margin-left: auto;
   margin-right: auto;
@@ -427,9 +427,9 @@ footer {
 
 .main-layout {
   display: flex;
-  gap: 2em;
+  gap: 3em;
   align-items: flex-start;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -439,7 +439,7 @@ footer {
 }
 
 #sidebar-filtros {
-  width: 260px;
+  width: 280px;
   background: rgba(255, 240, 255, 0.85);
   border-radius: 16px;
   box-shadow: 0 2px 15px rgba(255, 182, 223, 0.25);
@@ -500,7 +500,7 @@ footer {
 }
   </style>
 </head>
-<body oncontextmenu="return false;">
+<body>
 <div class="snowflakes" aria-hidden="true">
   <div class="snowflake">
     <img src="https://i.imgur.com/Anpva1L.png">
@@ -553,21 +553,19 @@ footer {
     <br>
     <button type="submit">Enviar</button>
   </form>
-  <!-- Controles de filtro y búsqueda -->
-<div class="main-layout">
-  <div id="mensajes"></div>
-  <aside id="sidebar-filtros">
-    <h3>Filtrar</h3>
-    <label for="orden">Orden:</label>
-    <select id="orden">
-      <option value="recientes">Más recientes primero</option>
-      <option value="antiguas">Más antiguas primero</option>
-    </select>
-    <input id="busqueda" type="text" placeholder="Buscar por nombre o texto...">
-  </aside>
-</div>
- <!-- Entradas de texto -->
-  <div id="mensajes"></div>
+
+  <div class="main-layout">
+    <div id="mensajes"></div>
+    <aside id="sidebar-filtros">
+      <h3>Filtrar</h3>
+      <label for="orden">Orden:</label>
+      <select id="orden">
+        <option value="recientes">Más recientes primero</option>
+        <option value="antiguas">Más antiguas primero</option>
+      </select>
+      <input id="busqueda" type="text" placeholder="Buscar por nombre o texto...">
+    </aside>
+  </div>
 
   <script src="main.js"></script>
    <footer>
